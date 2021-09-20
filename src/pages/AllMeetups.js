@@ -1,32 +1,40 @@
-// import MeetupItem from "../components/meetups/MeetupItem";
+import { useState, useEffect } from "react";
+
 import MeetupList from "../components/meetups/MeetupList";
 
-const DUMMY_DATA = [
-  {
-    id: 'm1',
-    title: 'Indoor FrontDev Meetup',
-    image:
-      'https://images.pexels.com/photos/159805/meeting-modern-room-conference-159805.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260',
-    address: 'FrontDev Hub 5, 12345 Meetup City',
-    description:
-      'This is a first, amazing meetup which you definitely should not miss. It will be a lot of fun!',
-  },
-  {
-    id: 'm2',
-    title: 'Global FrontDev Meetup',
-    image:
-      'https://images.pexels.com/photos/1024248/pexels-photo-1024248.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260',
-    address: 'FrontDev Hub 5, 12345 Meetup City',
-    description:
-      'This is a meetup for all amazing Frontend Developer. It promises to be fun. See you there!',
-  },
-];
-
 function AllMeetupsPage() {
+  const [isLoading, setIsLoading] = useState(true);
+  const [loadedMeetups, setLoadedMeetups] = useState([]);
+
+  useEffect(() => {
+    fetch(
+      "https://meetup-react-app-cc81c-default-rtdb.firebaseio.com/meetups.json"
+    )
+      .then((response) => {
+        return response.json();
+      })
+      .then((data) => {
+        setIsLoading(false);
+        setLoadedMeetups(data);
+      });
+  }, []);  
+
+  if (isLoading) {
+    return (
+      <section>
+        <p>Loading...</p>
+      </section>
+    );
+  }
+  
+
+
+
+  
   return (
     <section>
       <h1>All Meetups</h1>
-      <MeetupList meetups={DUMMY_DATA} />
+      <MeetupList meetups={loadedMeetups} />
     </section>    
   );
 }
