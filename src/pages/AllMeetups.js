@@ -1,24 +1,24 @@
-import MeetupItem from "../components/meetups/MeetupItem";
+// import MeetupItem from "../components/meetups/MeetupItem";
 import MeetupList from "../components/meetups/MeetupList";
 
 const DUMMY_DATA = [
   {
     id: 'm1',
-    title: 'This is a first meetup',
+    title: 'Indoor FrontDev Meetup',
     image:
-      'https://images.pexels.com/photos/3201921/pexels-photo-3201921.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
-    address: 'Meetupstreet 5, 12345 Meetup City',
+      'https://images.pexels.com/photos/159805/meeting-modern-room-conference-159805.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260',
+    address: 'FrontDev Hub 5, 12345 Meetup City',
     description:
       'This is a first, amazing meetup which you definitely should not miss. It will be a lot of fun!',
   },
   {
     id: 'm2',
-    title: 'This is a second meetup',
+    title: 'Global FrontDev Meetup',
     image:
-      'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Stadtbild_M%C3%BCnchen.jpg/2560px-Stadtbild_M%C3%BCnchen.jpg',
-    address: 'Meetupstreet 5, 12345 Meetup City',
+      'https://images.pexels.com/photos/1024248/pexels-photo-1024248.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260',
+    address: 'FrontDev Hub 5, 12345 Meetup City',
     description:
-      'This is a first, amazing meetup which you definitely should not miss. It will be a lot of fun!',
+      'This is a meetup for all amazing Frontend Developer. It promises to be fun. See you there!',
   },
 ];
 
